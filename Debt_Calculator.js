@@ -2,87 +2,79 @@
 const custName = document.querySelector("#btCustomer");
 const item = document.querySelector("#btItem");
 const amt = document.querySelector("#btAmount");
-const submit = document.querySelector("#btSubmit")
+const submit = document.querySelector("#btSubmit");
+const paidAmt = document.querySelector("#btPaid");
 
-
-// Creating an Object for items and price
-let transactions = {};
-
-// Making a list of all the transactions
-let transactionList = [];
-
-// Creating and Object of Customername and Transactions associated to it
-let userTransaction = {};
 
 // Creating a list of all user transactions
 const debitBook = [];
 
-
-
+let totalDebt = 0;
 
 function showthis (){
     
     // Changing the Inputs into Value
     const customerName = custName.value;
     const itemBought = item.value;
-    let amount = parseInt(amt.value);
-    // if (debitBook == null) {
-    //     transactions = {
-    //         itemBought,
-    //         amount
-    //     }
-    //     userTransaction = {
-    //         customerName,
-    //         transactionList
-    //     }
+    const amount = amt.value;
 
-    //     transactionList.push(transactions)
+    let transactions = {
+        "itemBought": itemBought,
+        "amount": amount
+    }
+    let userFound = false ;
 
-    //     debitBook.push(userTransaction)
+    for (let i=0; i<debitBook.length; i++) {
+        if (debitBook[i].username === customerName){
+            debitBook[i].transactionlist.push(transactions);
+            debitBook[i].customerDebt += parseInt(amount);
+            totalDebt += parseInt(amount);
+            userFound = true;
+        } 
+    }
 
-    // } else{
-
-    //     for (const element of debitBook) {
-    //         console.log('Hello World');
-    if (debitBook.customerName == customerName){     
-        
-        find = debitBook[customerName];
-        customerFound = debitBook[find];
-        transactions = {
-            itemBought,
-            amount
+    if (userFound === false){
+        let userTransaction = {
+            "username": customerName,
+            "transactionlist":[transactions],
+            "customerDebt": parseInt(amount)
         }
-        find.transactionList.push(transactions);
-        
-    } else {
-        transactionList = [];
-        transactions = {
-            itemBought,
-            amount
-        }
-        userTransaction = {
-            customerName,
-            transactionList
-        }
+        debitBook.push(userTransaction);
+        totalDebt += parseInt(amount);
+    }
 
-        transactionList.push(transactions)
 
-        debitBook.push(userTransaction)
-
-            // return transactions,transactionList,userTransaction, debitBook
-            }
     console.log(debitBook);
+}
+
+function remaining(){
+    const customerName = custName.value;
+    const amount = amt.value;
+    let search = false;
+    for (i=0; i<debitBook.length; i++){
+        if (debitBook[i].username === customerName){
+            debitBook[i].customerDebt -= parseInt(amount);
+            totalDebt -= parseInt(amount);
+            console.log(debitBook);
+            search = true;
+            if (debitBook[i].customerDebt < 0){
+                youOwe = debitBook[i].customerDebt;
+                console.log(`You owe Rs. ${youOwe} to ${customerName}`)
+            } else{
+                owesYou = debitBook[i].customerDebt;
+                console.log(`${customerName} owes you ${owesYou}.`)
+            }
+        } 
+        
+        if (search=== false){
+            console.log(`${customerName} does not exist in our directoy. Please add ${customerName} to directorty first.`)
         }
-
+        
         
 
-        
-
-
-        
-    
-    
-
+    }
+}
 
 submit.addEventListener("click", showthis, false);
+paidAmt.addEventListener("click", remaining, false);
 
