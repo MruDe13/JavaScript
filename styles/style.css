@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --primary: #0D8CED;
+    --secondary: #EBF2FE;
+    --foot: #030A14;
+
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    max-width: 600px;
+    margin: auto;
+}
+
+.nav {
+    background-color: var(--secondary);
+    padding: 0.3rem;
+    margin: auto;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.nav .logo { 
+    color: var(--primary);
+    text-align: left;
+    font-weight: bolder;
+}
+
+.nav #active {
+    font-weight: bolder;
+}
+
+ul {
+    list-style: none;
+}
+
+.list-non-bullet {
+    list-style: none;
+    text-align: right;
+    color: var(--primary);
+    
+}
+
+.list-item-non-bullet {
+    display: inline;
+    padding: 0.5rem 1rem;
+}
+
+header .hero {
+    max-width: 600px;
+}
+
+h1 {
+    color: var(--primary);
+    text-align: center;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.off-bg {
+    background-color: var(--secondary);
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.on-bg {
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.finish {
+    background-color: var(--primary);
+    padding: 1rem;
+    color: white;
+}
+
+.finish li {
+    padding: 0.5rem 0rem;
+}
+
+.finish a{
+    color: white;
+}
