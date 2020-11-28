@@ -86,3 +86,17 @@ a {
 .finish a{
     color: white;
 }
+
+.date {
+    background-color: lightblue;
+    padding: 0.2rem;
+    font-style: italic;
+}
+
+.play {
+    color: green;
+}
+
+.source-code {
+    color: red;
+}
