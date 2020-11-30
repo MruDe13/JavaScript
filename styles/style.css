@@ -53,7 +53,7 @@ ul {
 header .hero {
     max-width: 600px;
     height: auto;
-    margin: auto;
+    margin: 0px auto;
     display: block;
 }
 
@@ -107,7 +107,7 @@ a {
     color: red;
 }
 
-@media screen and (max-width) {
+@media screen and (max-width: 600px) {
     body{
         width: 100%;
     }
