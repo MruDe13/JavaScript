@@ -106,3 +106,13 @@ a {
 .source-code {
     color: red;
 }
+
+@media screen and (max-width) {
+    body{
+        max-width: 100%;
+    }
+
+    header .hero {
+        max-width: 100%;
+    }
+}
