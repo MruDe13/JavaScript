@@ -73,17 +73,17 @@ a {
     border-radius: 0.5rem;
 }
 
-.finish {
+.foot-media {
     background-color: var(--primary);
     padding: 1rem;
     color: white;
 }
 
-.finish li {
+.foot-media li {
     padding: 0.5rem 0rem;
 }
 
-.finish a{
+.foot-media a{
     color: white;
 }
 
