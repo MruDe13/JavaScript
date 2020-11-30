@@ -12,6 +12,9 @@ body {
     max-width: 600px;
     margin: auto;
 }
+* {
+    box-sizing: border-box;
+}
 
 .nav {
     background-color: var(--secondary);
@@ -49,6 +52,9 @@ ul {
 
 header .hero {
     max-width: 600px;
+    height: auto;
+    margin: auto;
+    display: block;
 }
 
 h1 {
