@@ -109,14 +109,9 @@ a {
 
 @media screen and (max-width) {
     body{
-        max-width: 100%;
+        width: 100%;
     }
-
-    header .hero {
-        max-width: 100%;
-    }
-
     img {
-        max-width: 100%;
+        width: 100%;
     }
 }
